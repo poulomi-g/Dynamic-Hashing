@@ -13,6 +13,7 @@ Included Files:
     * linkedlist.h
     * Makefile
     * README
+    
 Running Instructions:
     1. In the correct directory, type in `make` to the terminal and then
     write ./exercise.o to execute the program
