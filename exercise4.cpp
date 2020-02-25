@@ -21,7 +21,6 @@ struct UIntWrapper {
 int main() {
   HashTable<UIntWrapper> table(20);
 
-
   while (true) {
     string ins;
     cin >> ins;
@@ -35,6 +34,7 @@ int main() {
       break;
     }
 
+    // Otherwise, we are going to read an integer.
     UIntWrapper integer;
     cin >> integer.val;
 
