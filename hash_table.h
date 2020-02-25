@@ -1,3 +1,13 @@
+// ---------------------------------------------------
+// Name: Poulomi Ganguly
+// ID: 1598887
+//
+// CMPUT 275 , Winter 2020
+//
+// Weekly 4: Dynamic Hashing
+// ---------------------------------------------------
+
+
 #ifndef _HASH_TABLE_H_
 #define _HASH_TABLE_H_
 
