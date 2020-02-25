@@ -129,22 +129,22 @@ private:
   unsigned int numItems; // # of items in the table
   unsigned int tableSize; // # of buckets
 
+  // Resizes table according to given size
   void resize(unsigned int newSize);
   
   // Computes the hash table bucket that the item maps into
   // by calling it's .hash() method.
   unsigned int getBucket(const T& item) const;
+  // Gets the new bucket according to varying size.
   unsigned int newBucket(const T& item, unsigned int newSize) const;
 };
 
 
 template <typename T>
-HashTable<T>::HashTable() {
+HashTable<T>::HashTable() { // When no tableSize is passed in
   // calls the constructor for each linked list
   // so each is initialized properly as an empty list
   table = new LinkedList<T>[10];
-
-  // we are not storing anything
   numItems = 0;
   this->tableSize = 10;
 }
@@ -152,8 +152,7 @@ HashTable<T>::HashTable() {
 template <typename T>
 HashTable<T>::HashTable(unsigned int tableSize) {
 
-
-  // make sure there is at least one bucket
+  // Make program quit if tableSize is less than 0
   assert(tableSize > 0);
 
   // calls the constructor for each linked list
@@ -200,7 +199,7 @@ bool HashTable<T>::insert(const T& item) {
       resize(newSize);
     }
 
-    else if ((numItems <= (tableSize/4)) && (tableSize > 10)){
+    else if ((numItems <= (tableSize/4)) && (tableSize > 10)){ // When number of items is too little
       unsigned int defaultSize = 10;
       unsigned int newSize = max((tableSize/2), defaultSize);	
       resize(newSize);
@@ -250,7 +249,6 @@ unsigned int HashTable<T>::newBucket(const T& item, unsigned int newSize) const 
   return item.hash() % newSize; // newSize is not the same as tableSize
 }
 
-// Resizes table according to given size
 template <typename T>
 void HashTable<T>::resize(unsigned int newSize){
   
