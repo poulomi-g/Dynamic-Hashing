@@ -1,0 +1,44 @@
+// ---------------------------------------------------
+// Name: Poulomi Ganguly
+// ID: 1598887
+//
+// CMPUT 275 , Winter 2020
+//
+// Weekly 4: Dynamic Hashing
+// ---------------------------------------------------
+
+Included Files:
+    * exercise4.cpp
+    * hashtable.h (modified)
+    * linkedlist.h
+    * Makefile
+    * README
+Running Instructions:
+    1. In the correct directory, type in `make` to the terminal and then
+    write ./exercise.o to execute the program
+    2. Use the following letters followed by a space to do perform their
+    respective functions:
+        * I: Insert
+        * R: Remove
+        * Q: Query an item
+        * S: Display number of items
+        * STOP: exit the program
+    
+Changes to source code:
+
+1. hashtable.h
+    * Hashtable(): This constructor was added for when no argument is passed
+    for a table size. It sets default table size as 10.
+    * HashTable(unsigned int tableSize): Modified to abort the program if
+    specified table size is not a positive, non-zero number.
+    * insert(const T& item): Modified to check whether number of items has
+    increased past the number of buckets or if its too little according to the
+    specified conditions. Resizes the table accordingly by calling resize()
+    * remove(const T& item): Same modification as insert()
+    * newBucket(const T& item, unsigned int newSize): Added in, gets the new
+    bucket according to a size that is different from tableSize.
+    * resize(unsigned int newSize): Added in, resizes a table according to
+    specified parameters. 
+
+Assumptions: 
+    * Program is executed in the correct directory with Makefile present.
